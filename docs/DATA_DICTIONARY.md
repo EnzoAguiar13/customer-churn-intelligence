@@ -23,4 +23,3 @@ are not silently normalized in the acquisition layer.
 There is no explicit identifier column in the downloaded CSV. The validator
 therefore reports identifier duplication as not applicable while exposing a
 separate helper for future datasets that do contain an identifier.
-

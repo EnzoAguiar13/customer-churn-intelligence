@@ -8,8 +8,8 @@ a binary churn label.
 
 ## Source and license
 
-Source: <https://archive.ics.uci.edu/dataset/563/iranian+churn+dataset>  
-DOI: <https://doi.org/10.24432/C5JW3Z>  
+Source: <https://archive.ics.uci.edu/dataset/563/iranian+churn+dataset><br>
+DOI: <https://doi.org/10.24432/C5JW3Z><br>
 License: CC BY 4.0. Attribution is required when sharing adaptations.
 
 ## Intended use
