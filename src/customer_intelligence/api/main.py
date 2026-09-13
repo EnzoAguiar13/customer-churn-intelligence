@@ -27,4 +27,3 @@ def health() -> HealthResponse:
     """Report process liveness while the ML pipeline is not yet initialized."""
 
     return HealthResponse(status="ok", version=__version__)
-

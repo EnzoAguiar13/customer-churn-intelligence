@@ -20,6 +20,7 @@ limitations and bias considerations documented instead of hidden.
 - Python 3.12 package using a `src/` layout;
 - FastAPI process with a minimal `/health` liveness endpoint;
 - Pydantic Settings for environment-backed configuration;
+- Pandas-based dataset acquisition and validation foundation;
 - Ruff for linting and formatting-compatible checks;
 - mypy in strict mode;
 - pytest and an HTTP smoke test;
@@ -54,6 +55,16 @@ pytest
 
 No database, model artifact or external service is required for Phase 5A.
 
+## Dataset and data validation
+
+Phase 5B selects the documented [UCI Iranian Churn dataset](docs/DATASET.md).
+The raw CSV is acquired reproducibly and kept out of Git; the pipeline records
+source metadata and SHA-256 checksums, validates schema/types/ranges/categories,
+and produces a JSON quality report. See the [data dictionary](docs/DATA_DICTIONARY.md)
+and [data card](DATA_CARD.md).
+
+**NO MODEL TRAINED YET.** No accuracy, ROC-AUC or churn probability is reported.
+
 ## Safety boundary
 
 This is a portfolio engineering project. It must use public or synthetic data
@@ -63,4 +74,3 @@ databases or credentials during development or testing.
 ## License
 
 MIT. See [LICENSE](LICENSE).
-

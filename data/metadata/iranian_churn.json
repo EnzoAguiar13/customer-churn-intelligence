@@ -1,0 +1,14 @@
+{
+  "dataset_name": "Iranian Churn",
+  "dataset_version": "UCI dataset 563",
+  "source_url": "https://archive.ics.uci.edu/static/public/563/iranian%2Bchurn%2Bdataset.zip",
+  "provider": "UCI Machine Learning Repository",
+  "license": "CC BY 4.0",
+  "retrieved_at": "2026-09-13T22:15:06.260178+00:00",
+  "archive_filename": "iranian_churn_dataset.zip",
+  "archive_sha256": "696c3a1812267980751f30d19193a1b430ac4ad76172bb089e664c96813ead66",
+  "raw_filename": "iranian_churn.csv",
+  "raw_sha256": "90d5fb6bd1630cd4de4b4d28fcf8b4cb92a8f6ab7484605b0799d47386f7dbe1",
+  "row_count": 3150,
+  "column_count": 14
+}
