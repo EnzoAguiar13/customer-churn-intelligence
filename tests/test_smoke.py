@@ -10,4 +10,3 @@ def test_health_endpoint_is_live() -> None:
 
     assert response.status_code == 200
     assert response.json() == {"status": "ok", "version": "0.1.0"}
-

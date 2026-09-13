@@ -26,4 +26,3 @@ def get_settings() -> Settings:
     """Return one immutable-by-convention settings instance per process."""
 
     return Settings()
-

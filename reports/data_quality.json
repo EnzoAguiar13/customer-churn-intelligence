@@ -1,0 +1,112 @@
+{
+  "dataset_file": "data/raw/iranian_churn.csv",
+  "rows": 3150,
+  "columns": 14,
+  "validation": {
+    "status": "FAIL",
+    "errors": [
+      "Charge  Amount: 7 invalid values"
+    ],
+    "warnings": [
+      "300 duplicate rows detected; no rows were removed",
+      "no explicit customer identifier is present in the downloaded CSV"
+    ],
+    "missing_values": {
+      "Call  Failure": 0,
+      "Complains": 0,
+      "Subscription  Length": 0,
+      "Charge  Amount": 0,
+      "Seconds of Use": 0,
+      "Frequency of use": 0,
+      "Frequency of SMS": 0,
+      "Distinct Called Numbers": 0,
+      "Age Group": 0,
+      "Tariff Plan": 0,
+      "Status": 0,
+      "Age": 0,
+      "Customer Value": 0,
+      "Churn": 0
+    },
+    "invalid_values": {
+      "Charge  Amount": 7
+    },
+    "duplicate_rows": 300,
+    "duplicate_identifiers": null,
+    "target_distribution": {
+      "0": 2655,
+      "1": 495
+    },
+    "numeric_summary": {
+      "Call  Failure": {
+        "min": 0.0,
+        "max": 36.0,
+        "mean": 7.627936507936508
+      },
+      "Complains": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.07650793650793651
+      },
+      "Subscription  Length": {
+        "min": 3.0,
+        "max": 47.0,
+        "mean": 32.54190476190476
+      },
+      "Charge  Amount": {
+        "min": 0.0,
+        "max": 10.0,
+        "mean": 0.9428571428571428
+      },
+      "Seconds of Use": {
+        "min": 0.0,
+        "max": 17090.0,
+        "mean": 4472.459682539683
+      },
+      "Frequency of use": {
+        "min": 0.0,
+        "max": 255.0,
+        "mean": 69.46063492063492
+      },
+      "Frequency of SMS": {
+        "min": 0.0,
+        "max": 522.0,
+        "mean": 73.17492063492064
+      },
+      "Distinct Called Numbers": {
+        "min": 0.0,
+        "max": 97.0,
+        "mean": 23.50984126984127
+      },
+      "Age Group": {
+        "min": 1.0,
+        "max": 5.0,
+        "mean": 2.826031746031746
+      },
+      "Tariff Plan": {
+        "min": 1.0,
+        "max": 2.0,
+        "mean": 1.0777777777777777
+      },
+      "Status": {
+        "min": 1.0,
+        "max": 2.0,
+        "mean": 1.2482539682539682
+      },
+      "Age": {
+        "min": 15.0,
+        "max": 55.0,
+        "mean": 30.998412698412697
+      },
+      "Customer Value": {
+        "min": 0.0,
+        "max": 2165.28,
+        "mean": 470.9729158730159
+      },
+      "Churn": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.15714285714285714
+      }
+    }
+  }
+}
