@@ -121,6 +121,13 @@ def validate_dataframe(
         if invalid_count:
             invalid_values[rule.name] = invalid_count
             errors.append(f"{rule.name}: {invalid_count} invalid values")
+        if rule.documented_maximum is not None:
+            conflict_count = int((numeric > rule.documented_maximum).fillna(False).sum())
+            if conflict_count:
+                warnings.append(
+                    f"{rule.name}: {conflict_count} values exceed the documented maximum "
+                    f"{rule.documented_maximum:g}; retained as a documentation conflict"
+                )
 
     duplicate_rows = int(frame.duplicated().sum())
     if duplicate_rows:

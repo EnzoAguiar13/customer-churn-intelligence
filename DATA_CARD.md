@@ -21,11 +21,12 @@ and does not represent the author's customers or employers.
 ## Composition and preprocessing status
 
 The source documents 3,150 observations, 13 features and a churn target. It
-reports no missing values. Phase 5B preserves raw values, performs validation
-and records quality signals; it does not impute, remove duplicates or create
-features. The first run found 300 duplicate rows and 7 values outside the
-documented `Charge  Amount` range; these findings remain explicit in the
-quality report.
+reports no missing values. Phase 5B preserves raw values and Phase 5C adds a
+deterministic feature contract and grouped split strategy. The raw file is not
+imputed or rewritten. The source documents `Charge  Amount` as 0--9, while
+the downloaded file contains 7 values equal to 10; this is classified as
+`DOCUMENTATION_CONFLICT`. The operational policy accepts 0--10, retains all
+raw values and emits a warning. The 300 exact duplicate rows are retained.
 
 ## Sensitive attributes
 

@@ -30,6 +30,7 @@ dev = [
 [project.scripts]
 cci-data-download = "customer_intelligence.data.download:main"
 cci-data-quality = "customer_intelligence.data.quality_report:main"
+cci-data-prepare = "customer_intelligence.data.preparation_report:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

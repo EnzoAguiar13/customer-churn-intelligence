@@ -26,6 +26,17 @@ def test_valid_dataset_passes() -> None:
     assert result.target_distribution == {"0": 1, "1": 1}
 
 
+def test_charge_amount_ten_is_documented_conflict_not_invalid() -> None:
+    frame = valid_frame()
+    frame.loc[0, "Charge  Amount"] = 10
+
+    result = validate_dataframe(frame)
+
+    assert result.passed
+    assert "Charge  Amount" not in result.invalid_values
+    assert any("documentation conflict" in warning for warning in result.warnings)
+
+
 def test_missing_required_column_fails() -> None:
     frame = valid_frame().drop(columns=["Churn"])
 
