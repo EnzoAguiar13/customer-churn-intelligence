@@ -18,6 +18,7 @@ class ColumnRule:
     allowed_values: tuple[int, ...] | None = None
     minimum: float | None = None
     maximum: float | None = None
+    documented_maximum: float | None = None
 
 
 SCHEMA: Final[tuple[ColumnRule, ...]] = (
@@ -50,13 +51,14 @@ SCHEMA: Final[tuple[ColumnRule, ...]] = (
     ),
     ColumnRule(
         "Charge  Amount",
-        "Ordinal charge band from 0 to 9",
+        "Ordinal charge band; source documentation says 0 to 9",
         "integer",
         "financial",
         False,
         "FEATURE_CANDIDATE",
         minimum=0,
-        maximum=9,
+        maximum=10,
+        documented_maximum=9,
     ),
     ColumnRule(
         "Seconds of Use",

@@ -31,18 +31,20 @@ dataset, not a proxy for the author's employers, clients or users.
 
 ## Observed data-quality findings
 
-The first validation run found no missing values, but it found 300 duplicate
-rows and 7 records with `Charge  Amount = 10`. The UCI documentation describes
-that ordinal field as ranging from 0 to 9, so the quality gate is intentionally
-`FAIL` until the discrepancy is resolved or explicitly accepted. Raw data is
-not changed and duplicates are not removed in this phase.
+Validation found no missing values, 300 exact duplicate rows and 7 records with
+`Charge  Amount = 10`. The UCI documentation describes that ordinal field as
+ranging from 0 to 9, so the 7 values are classified as
+`DOCUMENTATION_CONFLICT`, not silently corrected. The operational schema
+accepts 0--10, retains the raw values and reports the conflict as a warning.
+The duplicate policy is `KEEP`: without an explicit customer identifier, the
+rows cannot be safely interpreted as repeated customers and are retained.
 
 ## Target and temporal framing
 
 The source documents that attributes other than churn aggregate the first nine
 months and that churn is the customer state at month twelve, leaving a three
-month planning gap. This is useful for a future leakage-aware split, but no
-train/test split is implemented in Phase 5B.
+month planning gap. This is useful for a future leakage-aware split, but the
+downloaded CSV has no individual timestamps.
 
 ## Potential Leakage Risks
 
@@ -55,9 +57,10 @@ train/test split is implemented in Phase 5B.
   contains no explicit identifier column. No identifier is inferred or fabricated.
 - Any future preprocessing must fit only on training data to avoid leakage.
 
-## Future split strategy
+## Split strategy
 
 The documented nine-month feature window and month-twelve target should be
-preserved. A future modeling phase must compare a stratified random split with
-a time-aware strategy and document the final choice. Phase 5B does not perform
-the split.
+preserved. Phase 5C uses a deterministic stratified random split with exact
+feature-vector grouping because a time-aware split cannot be reconstructed
+from the available file. Details are in
+[`docs/SPLIT_STRATEGY.md`](SPLIT_STRATEGY.md).

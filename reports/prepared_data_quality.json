@@ -1,8 +1,37 @@
 {
   "dataset_file": "data/raw/iranian_churn.csv",
-  "rows": 3150,
-  "columns": 14,
-  "validation": {
+  "rows_before": 3150,
+  "rows_after": 3150,
+  "features_included": [
+    "Call  Failure",
+    "Complains",
+    "Subscription  Length",
+    "Charge  Amount",
+    "Seconds of Use",
+    "Frequency of use",
+    "Frequency of SMS",
+    "Distinct Called Numbers",
+    "Tariff Plan",
+    "avg_call_seconds",
+    "sms_per_call",
+    "distinct_contact_ratio"
+  ],
+  "features_excluded": [
+    "Age Group",
+    "Status",
+    "Age",
+    "Customer Value",
+    "Churn"
+  ],
+  "derived_features": [
+    "avg_call_seconds",
+    "sms_per_call",
+    "distinct_contact_ratio"
+  ],
+  "duplicate_policy": "KEEP",
+  "charge_amount_policy": "DOCUMENTATION_CONFLICT: accept operational values 0-10; retain raw values",
+  "random_seed": 42,
+  "validation_status": {
     "status": "PASS",
     "errors": [],
     "warnings": [
@@ -105,5 +134,42 @@
         "mean": 0.15714285714285714
       }
     }
-  }
+  },
+  "warnings": [
+    "Charge  Amount: 7 values exceed the documented maximum 9; retained as a documentation conflict",
+    "300 duplicate rows detected; no rows were removed",
+    "no explicit customer identifier is present in the downloaded CSV"
+  ],
+  "train_rows": 2198,
+  "validation_rows": 479,
+  "test_rows": 473,
+  "target_distribution": {
+    "all": {
+      "0": 2655,
+      "1": 495
+    },
+    "train": {
+      "0": 1861,
+      "1": 337
+    },
+    "validation": {
+      "0": 398,
+      "1": 81
+    },
+    "test": {
+      "0": 396,
+      "1": 77
+    }
+  },
+  "split_integrity": {
+    "status": "PASS",
+    "errors": [],
+    "row_counts": {
+      "train": 2198,
+      "validation": 479,
+      "test": 473
+    },
+    "overlapping_feature_vectors": 0
+  },
+  "status": "PASS"
 }
